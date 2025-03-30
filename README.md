@@ -1,4 +1,38 @@
 # Night-Sky-Light-Pollution-Analyser
+Resources:
+# Automated Night-Time Light Data Export and Visualization
+
+## Overview
+This project automates the extraction, storage, and visualization of night-time light intensity data for India using Google Earth Engine (GEE) and Google Cloud Platform (GCP). The workflow consists of two key parts:
+1. *Data Export*: Automating the daily export of night-time light radiance data to Google Cloud Storage.
+2. *Heat Map Visualization*: Creating a heat map of light pollution based on the exported data.
+
+---
+
+## Workflow
+### 1. Data Export
+- The Python script retrieves data from the VIIRS night-time light dataset for India.
+- Sampling points are extracted to measure average radiance values.
+- Daily data is exported as CSV files to a specified GCP bucket for automated processing.
+
+### 2. Heat Map Creation
+- The most recent CSV file is fetched automatically from the GCP bucket.
+- Latitude, longitude, and radiance intensity values are extracted from the file.
+- A heat map of light pollution over India is generated using Folium and saved as an interactive HTML file.
+
+---
+Links:
+VIIRS Night-Time Light Dataset Description:
+https://developers.google.com/earth-engine/datasets/catalog/NOAA_VIIRS_DNB_MONTHLY_V1_VCMSLCFG 
+https://developers.google.com/earth-engine
+https://cloud.google.com/storage/docs
+https://cloud.google.com/scheduler/docs
+https://cloud.google.com/pubsub/docs
+https://python-visualization.github.io/folium/latest/
+https://pandas.pydata.org/
+
+### Google Earth Engine Python API Documentation:
+
 Code 1: Automating Night-Time Lights Data Export
 
 This code automates the process of exporting night-time light data for India using the NOAA/VIIRS DNB (Day/Night Band) dataset in Google Earth Engine (GEE) and saves the results as CSV files to a Google Cloud Storage (GCS) bucket. Here's what happens:
